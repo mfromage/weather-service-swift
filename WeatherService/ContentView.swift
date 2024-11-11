@@ -10,12 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            SearchFormView(viewModel: SearchFormViewModel(onSubmit: handleSubmit))
         }
         .padding()
+    }
+    
+    func handleSubmit(string: String) {
+        
     }
 }
 
