@@ -1,10 +1,3 @@
-//
-//  WeatherServiceUITests.swift
-//  WeatherServiceUITests
-//
-//  Created by Michael Michael on 11.11.24.
-//
-
 import XCTest
 
 final class WeatherServiceUITests: XCTestCase {
