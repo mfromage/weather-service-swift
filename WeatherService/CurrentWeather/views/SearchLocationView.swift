@@ -37,7 +37,6 @@ struct SearchLocationView: View {
                     .accessibility(identifier: SearchLocationTestId.errorMessage)
             }
         }
-        .padding()
     }
 }
 

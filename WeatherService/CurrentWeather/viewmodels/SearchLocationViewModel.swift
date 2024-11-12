@@ -18,12 +18,12 @@ class SearchLocationViewModel: ObservableObject {
         locationService.findLocations(query: query)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
+                self.isLoading = false
                 if case let .failure(error) = completion {
-                    self.isLoading = false
+                    
                     self.errorMessage = error.localizedDescription
                 }
             }, receiveValue: { locations in
-                self.isLoading = false
                 self.locations = locations
                 self.errorMessage = locations.count == 0 ? "No locations found" : nil
             })
