@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            SearchFormView(viewModel: SearchFormViewModel(onSubmit: handleSubmit))
+        ScrollView {
+            VStack(alignment:.trailing) {
+                SearchLocationView(viewModel: SearchLocationViewModel()) { _ in
+                    
+                }
+            }
         }
-        .padding()
     }
     
-    func handleSubmit(string: String) {
-        
-    }
 }
 
 #Preview {

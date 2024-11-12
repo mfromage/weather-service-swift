@@ -24,7 +24,6 @@ struct SearchFormView: View {
                     .foregroundColor(.red)
             }
         }
-        .padding(16)
     }
 }
 

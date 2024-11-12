@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		856115EB2CE2D3A800ADDDCB /* SwiftDotenv in Frameworks */ = {isa = PBXBuildFile; productRef = 856115EA2CE2D3A800ADDDCB /* SwiftDotenv */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		85AF72512CE2BE0B00A128E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +33,22 @@
 		85AF725A2CE2BE0B00A128E2 /* WeatherServiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherServiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		856115E82CE2CF3A00ADDDCB /* Exceptions for "WeatherService" folder in "WeatherService" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 85AF723E2CE2BE0900A128E2 /* WeatherService */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		85AF72412CE2BE0900A128E2 /* WeatherService */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				856115E82CE2CF3A00ADDDCB /* Exceptions for "WeatherService" folder in "WeatherService" target */,
+			);
 			path = WeatherService;
 			sourceTree = "<group>";
 		};
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				856115EB2CE2D3A800ADDDCB /* SwiftDotenv in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +130,7 @@
 			);
 			name = WeatherService;
 			packageProductDependencies = (
+				856115EA2CE2D3A800ADDDCB /* SwiftDotenv */,
 			);
 			productName = WeatherService;
 			productReference = 85AF723F2CE2BE0900A128E2 /* WeatherService.app */;
@@ -195,6 +214,9 @@
 			);
 			mainGroup = 85AF72362CE2BE0900A128E2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				856115E92CE2D3A800ADDDCB /* XCRemoteSwiftPackageReference "swift-dotenv" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 85AF72402CE2BE0900A128E2 /* Products */;
 			projectDirPath = "";
@@ -394,6 +416,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherService/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherService/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -431,6 +454,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherService/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherService/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -583,6 +607,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		856115E92CE2D3A800ADDDCB /* XCRemoteSwiftPackageReference "swift-dotenv" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thebarndog/swift-dotenv";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		856115EA2CE2D3A800ADDDCB /* SwiftDotenv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 856115E92CE2D3A800ADDDCB /* XCRemoteSwiftPackageReference "swift-dotenv" */;
+			productName = SwiftDotenv;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 85AF72372CE2BE0900A128E2 /* Project object */;
 }
