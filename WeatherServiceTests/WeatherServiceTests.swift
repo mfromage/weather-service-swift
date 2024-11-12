@@ -1,35 +1,41 @@
-//
-//  WeatherServiceTests.swift
-//  WeatherServiceTests
-//
-//  Created by Michael Michael on 11.11.24.
-//
-
 import XCTest
+import Combine
+import CoreLocation
+@testable import WeatherService
 
 final class WeatherServiceTests: XCTestCase {
+    var weatherService: WeatherService!
+    var cancellables: Set<AnyCancellable>!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        weatherService = MockWeatherService()
+        cancellables = []
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+        weatherService = nil
+        cancellables = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+    func testGetCurrentWeatherSuccess() throws {
+        
+        let coordinate = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
+        let expectation = self.expectation(description: "Weather data fetched successfully")
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+        weatherService.getCurrentWeather(coordinate: coordinate)
+            .sink(receiveCompletion: { completion in
+                if case .failure(let error) = completion {
+                    XCTFail("Expected success but got failure with \(error)")
+                }
+            }, receiveValue: { weather in
+                
+                XCTAssertEqual(weather.temp, MockWeatherService.weather.temp)
+                expectation.fulfill()
+            })
+            .store(in: &cancellables)
 
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 }
