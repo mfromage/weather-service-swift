@@ -11,13 +11,10 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack(alignment:.trailing) {
-                SearchLocationView(viewModel: SearchLocationViewModel()) { _ in
-                    
-                }
+                CurrentWeather(viewModel: CurrentWeatherViewModel())
             }
         }
     }
-    
 }
 
 #Preview {
